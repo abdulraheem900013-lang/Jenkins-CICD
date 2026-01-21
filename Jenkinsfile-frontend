@@ -107,10 +107,7 @@ pipeline {
             }
         }
         
-        stage('Push to Registry') {
-            when {
-                branch 'main'
-            }
+        stage('Push to Registry') { 
             steps {
                 echo '📤 Pushing Docker image to registry...'
                 script {
@@ -126,10 +123,7 @@ pipeline {
         }
         
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
-            steps {
+             steps {
                 echo '🚀 Deploying application...'
                 script {
                     sh """
